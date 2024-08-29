@@ -5,8 +5,8 @@ const cors = require('cors');
 const app = express();
 const PORT = 5000;
 
-app.use(cors());
-app.use(express.json());
+app.use(cors())
+app.use(express.json())
 
 const API_KEY = '424c22e3ccea1bb8cfc19290a9d937fa';
 
@@ -32,7 +32,7 @@ app.get('/weather', async (req, res) => {
             time: new Date().toLocaleTimeString(),
         });
     } catch (error) {
-        res.status(500).json({ error: 'An error occurred' });
+        res.status(500).json({ error: 'Provide city,Zip code not found' });
     }
 });
 
